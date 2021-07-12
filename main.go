@@ -160,10 +160,10 @@ func main() {
 		} else {
 			f.Name = &ast.Ident{Name: "PACKAGE-DELETE-ME"}
 			for _, spec := range f.Imports {
-				if spec.Name != nil {
-					fmt.Printf("%s: renamed import not supported", fset.Position(spec.Name.Pos()))
-					continue
-				}
+				// if spec.Name != nil {
+				// fmt.Printf("%s: renamed import not supported", fset.Position(spec.Name.Pos()))
+				// continue
+				// }
 				path, err := strconv.Unquote(spec.Path.Value)
 				if err != nil {
 					fmt.Printf("%s: invalid quoted string %s", fset.Position(spec.Name.Pos()), spec.Path.Value)
